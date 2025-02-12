@@ -1,6 +1,12 @@
 {
 	"name": "AzureDatabricks1",
 	"properties": {
+		"parameters": {
+			"WorkSpaceUrl": {
+				"type": "string",
+				"defaultValue": "https://adb-2741429623227012.12.azuredatabricks.net"
+			}
+		},
 		"annotations": [],
 		"type": "AzureDatabricks",
 		"typeProperties": {
