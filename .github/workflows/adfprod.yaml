@@ -29,7 +29,6 @@ jobs:
           parameters: >
             azure-experiments-dev-useast-adf/ARMTemplateParametersForFactory.json
             factoryName="adf-experiments-prod-useast-adf"
-            linkedService_KeyVault_name=KVadfexperiments-prod
             azure_key_vault_primary_properties_typeProperties_baseUrl=https://kvadfexperiments-prod.vault.azure.net/
             
 
