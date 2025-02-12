@@ -1,11 +1,11 @@
 {
 	"name": "azure_key_vault_primary",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
 			"baseUrl": "https://KVadfexperiments-dev.vault.azure.net/"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
