@@ -1,0 +1,9 @@
+{
+	"name": "azure-experiments-dev-useast-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "841b9cb0-84d5-4247-837a-8c57db55c194",
+		"tenantId": "bac483d7-f2a5-44d1-8a96-f559af6e0adb"
+	}
+}

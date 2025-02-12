@@ -1,0 +1,109 @@
+{
+	"name": "TrainDataRaw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "train.csv",
+				"container": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "battery_power",
+				"type": "String"
+			},
+			{
+				"name": "blue",
+				"type": "String"
+			},
+			{
+				"name": "clock_speed",
+				"type": "String"
+			},
+			{
+				"name": "dual_sim",
+				"type": "String"
+			},
+			{
+				"name": "fc",
+				"type": "String"
+			},
+			{
+				"name": "four_g",
+				"type": "String"
+			},
+			{
+				"name": "int_memory",
+				"type": "String"
+			},
+			{
+				"name": "m_dep",
+				"type": "String"
+			},
+			{
+				"name": "mobile_wt",
+				"type": "String"
+			},
+			{
+				"name": "n_cores",
+				"type": "String"
+			},
+			{
+				"name": "pc",
+				"type": "String"
+			},
+			{
+				"name": "px_height",
+				"type": "String"
+			},
+			{
+				"name": "px_width",
+				"type": "String"
+			},
+			{
+				"name": "ram",
+				"type": "String"
+			},
+			{
+				"name": "sc_h",
+				"type": "String"
+			},
+			{
+				"name": "sc_w",
+				"type": "String"
+			},
+			{
+				"name": "talk_time",
+				"type": "String"
+			},
+			{
+				"name": "three_g",
+				"type": "String"
+			},
+			{
+				"name": "touch_screen",
+				"type": "String"
+			},
+			{
+				"name": "wifi",
+				"type": "String"
+			},
+			{
+				"name": "price_range",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
