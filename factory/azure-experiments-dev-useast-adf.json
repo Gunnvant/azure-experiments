@@ -1,5 +1,13 @@
 {
 	"name": "azure-experiments-dev-useast-adf",
+	"properties": {
+		"globalParameters": {
+			"Global-KV-Name": {
+				"type": "string",
+				"value": "KVadfexperiments-dev"
+			}
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
