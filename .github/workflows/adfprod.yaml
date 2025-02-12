@@ -1,0 +1,36 @@
+name: Deploy ADF to Prod (Manual Gate)
+
+on:
+  push:
+    branches:
+      - main  # Deploy only when release branch is updated
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: adf_publish
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy ADF ARM Template
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: rg-prod
+          template: azure-experiments-dev-useast-adf/ARMTemplateForFactory.json
+          parameters: >
+            azure-experiments-dev-useast-adf/ARMTemplateParametersForFactory.json
+            factoryName="adf-experiments-prod-useast-adf"
+            
+
+          scope: resourcegroup
+          region: "eastus"
+          deploymentName: "adf-prod-deployment"
