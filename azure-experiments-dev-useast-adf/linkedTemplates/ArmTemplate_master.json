@@ -17,7 +17,7 @@
 		},
 		"azure_key_vault_primary_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://KVadfexperiments-dev.vault.azure.net/"
+			"defaultValue": "@{linkedService().KVUrl}"
 		},
 		"default_properties_Global-KV-Name_value": {
 			"type": "string",
