@@ -24,7 +24,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: rg-prod
+          resourceGroupName: rg-adf_experiments-prod-useast
           template: azure-experiments-dev-useast-adf/ARMTemplateForFactory.json
           parameters: >
             azure-experiments-dev-useast-adf/ARMTemplateParametersForFactory.json
