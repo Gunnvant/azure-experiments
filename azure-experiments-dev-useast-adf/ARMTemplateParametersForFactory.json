@@ -8,8 +8,14 @@
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"value": "StoragAccountConnString"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "@linkedService().ClusterID"
+		},
 		"azure_key_vault_primary_properties_typeProperties_baseUrl": {
 			"value": "https://KVadfexperiments-dev.vault.azure.net/"
+		},
+		"default_properties_Global-KV-Name_value": {
+			"value": "KVadfexperiments-dev"
 		}
 	}
 }

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azure-experiments-dev-useast-adf"
 		},
+		"default_properties_Global-KV-Name_value": {
+			"type": "string",
+			"defaultValue": "KVadfexperiments-dev"
+		},
 		"azure_key_vault_primary_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://KVadfexperiments-dev.vault.azure.net/"
@@ -14,6 +18,10 @@
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "StoragAccountConnString"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "@linkedService().ClusterID"
 		}
 	},
 	"variables": {
@@ -24,7 +32,12 @@
 			"name": "[concat(parameters('factoryName'), '/default')]",
 			"type": "Microsoft.DataFactory/factories/globalparameters",
 			"apiVersion": "2018-06-01",
-			"properties": {},
+			"properties": {
+				"Global-KV-Name": {
+					"type": "string",
+					"value": "[parameters('default_properties_Global-KV-Name_value')]"
+				}
+			},
 			"dependsOn": []
 		},
 		{
@@ -67,10 +80,20 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"WorkSpaceUrl": {
+						"type": "string",
+						"defaultValue": "https://adb-2741429623227012.12.azuredatabricks.net"
+					},
+					"ClusterID": {
+						"type": "string",
+						"defaultValue": "123"
+					}
+				},
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
-					"domain": "https://adb-2741429623227012.12.azuredatabricks.net",
+					"domain": "@linkedService().WorkSpaceUrl",
 					"accessToken": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
@@ -79,14 +102,7 @@
 						},
 						"secretName": "DatabricksToekn"
 					},
-					"newClusterNodeType": "Standard_DS3_v2",
-					"newClusterNumOfWorker": "1",
-					"newClusterSparkEnvVars": {
-						"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-					},
-					"newClusterVersion": "14.1.x-scala2.12",
-					"clusterOption": "Fixed",
-					"newClusterInitScripts": []
+					"existingClusterId": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 				}
 			},
 			"dependsOn": [

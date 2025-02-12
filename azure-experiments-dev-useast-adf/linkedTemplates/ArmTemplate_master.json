@@ -11,9 +11,17 @@
 			"type": "string",
 			"defaultValue": "StoragAccountConnString"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "@linkedService().ClusterID"
+		},
 		"azure_key_vault_primary_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://KVadfexperiments-dev.vault.azure.net/"
+		},
+		"default_properties_Global-KV-Name_value": {
+			"type": "string",
+			"defaultValue": "KVadfexperiments-dev"
 		},
 		"containerUri": {
 			"type": "string",
@@ -42,11 +50,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"default_properties_Global-KV-Name_value": {
+						"value": "[parameters('default_properties_Global-KV-Name_value')]"
+					},
 					"azure_key_vault_primary_properties_typeProperties_baseUrl": {
 						"value": "[parameters('azure_key_vault_primary_properties_typeProperties_baseUrl')]"
 					},
 					"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},

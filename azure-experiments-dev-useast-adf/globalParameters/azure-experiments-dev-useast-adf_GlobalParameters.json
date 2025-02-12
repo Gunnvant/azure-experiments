@@ -1,1 +1,6 @@
-{}
+{
+	"Global-KV-Name": {
+		"type": "string",
+		"value": "KVadfexperiments-dev"
+	}
+}
