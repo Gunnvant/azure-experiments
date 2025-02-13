@@ -1,16 +1,10 @@
 {
 	"name": "azure_key_vault_primary",
 	"properties": {
-		"parameters": {
-			"KVUrl": {
-				"type": "String",
-				"defaultValue": "https://KVadfexperiments-dev.vault.azure.net/"
-			}
-		},
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "@{linkedService().KVUrl}"
+			"baseUrl": "https://kvadfexperiments-dev.vault.azure.net/"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
