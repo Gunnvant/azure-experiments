@@ -30,6 +30,7 @@ jobs:
             azure-experiments-dev-useast-adf/ARMTemplateParametersForFactory.json
             factoryName="adf-experiments-prod-useast-adf"
             azure_key_vault_primary_properties_typeProperties_baseUrl=https://kvadfexperiments-prod.vault.azure.net/
+            AzureDatabricks1_properties_typeProperties_domain=https://adb-2653418616459084.4.azuredatabricks.net
             
 
           scope: resourcegroup
