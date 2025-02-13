@@ -12,10 +12,10 @@
 			"value": "https://adb-2741429623227012.12.azuredatabricks.net"
 		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
-			"value": "@linkedService().ClusterID"
+			"value": "1234"
 		},
 		"azure_key_vault_primary_properties_typeProperties_baseUrl": {
-			"value": "@{linkedService().KVUrl}"
+			"value": "https://kvadfexperiments-dev.vault.azure.net/"
 		},
 		"default_properties_Global-KV-Name_value": {
 			"value": "KVadfexperiments-dev"

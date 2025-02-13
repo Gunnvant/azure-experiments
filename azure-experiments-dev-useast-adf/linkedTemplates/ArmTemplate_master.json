@@ -17,11 +17,11 @@
 		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"type": "string",
-			"defaultValue": "@linkedService().ClusterID"
+			"defaultValue": "1234"
 		},
 		"azure_key_vault_primary_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "@{linkedService().KVUrl}"
+			"defaultValue": "https://kvadfexperiments-dev.vault.azure.net/"
 		},
 		"default_properties_Global-KV-Name_value": {
 			"type": "string",
