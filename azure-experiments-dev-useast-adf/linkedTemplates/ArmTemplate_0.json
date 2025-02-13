@@ -99,12 +99,15 @@
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
-					"domain": "@linkedService().WorkSpaceUrl",
+					"domain": "https://adb-2741429623227012.12.azuredatabricks.net",
 					"accessToken": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
 							"referenceName": "azure_key_vault_primary",
-							"type": "LinkedServiceReference"
+							"type": "LinkedServiceReference",
+							"parameters": {
+								"KVUrl": "https://KVadfexperiments-dev.vault.azure.net/"
+							}
 						},
 						"secretName": "DatabricksToekn"
 					},
