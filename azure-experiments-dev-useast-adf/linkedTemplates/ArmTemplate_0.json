@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "StoragAccountConnString"
 		},
+		"AzureDatabricks1_properties_typeProperties_domain": {
+			"type": "string",
+			"defaultValue": "https://adb-2741429623227012.12.azuredatabricks.net"
+		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "@linkedService().ClusterID"
@@ -99,7 +103,7 @@
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
-					"domain": "https://adb-2741429623227012.12.azuredatabricks.net",
+					"domain": "[parameters('AzureDatabricks1_properties_typeProperties_domain')]",
 					"accessToken": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
